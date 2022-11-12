@@ -1,24 +1,12 @@
-import React, { useState } from 'react'
+import React from 'react'
 import torologin from '../../media/img/torologin.svg'
 
 
 export const Login = () =>{
 
 
-    const [ formuser , setFormUser ] = useState({
-        user:'',
-        password:''
-    })
-
-    const handleChange = async(e) =>{
-        setFormUser({
-            ...formuser,
-            [e.target.name]:e.target.value
-        })
-    }
-
-    const handleSubmit = (e) =>{
-        console.log(formuser)
+    const handleChange = () =>{
+        
     }
 
 
@@ -31,7 +19,7 @@ export const Login = () =>{
                 </div>
                 <div>
                     <div>
-                        <form onSubmit={handleSubmit}>
+                        <form>
                             <label>USUARIO</label>
                             <input type='text' name='user' onChange={handleChange}/>
                             <label>CONTRASEÑA</label>

@@ -17,7 +17,7 @@ export const Login = () =>{
         })
     }
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = () =>{
         console.log(formuser)
     }
 

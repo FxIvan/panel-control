@@ -18,6 +18,7 @@ export const Login = () =>{
     }
 
     const handleSubmit = (e) =>{
+        e.preventDefault()
         console.log(formuser)
     }
 

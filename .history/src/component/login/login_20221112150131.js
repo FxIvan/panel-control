@@ -17,10 +17,6 @@ export const Login = () =>{
         })
     }
 
-    const handleSubmit = (e) =>{
-        console.log(formuser)
-    }
-
 
 
     return(

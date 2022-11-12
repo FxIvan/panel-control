@@ -17,10 +17,6 @@ export const Login = () =>{
         })
     }
 
-    const handleSubmit = (e) =>{
-        console.log(formuser)
-    }
-
 
 
     return(
@@ -31,7 +27,7 @@ export const Login = () =>{
                 </div>
                 <div>
                     <div>
-                        <form onSubmit={handleSubmit}>
+                        <form>
                             <label>USUARIO</label>
                             <input type='text' name='user' onChange={handleChange}/>
                             <label>CONTRASEÑA</label>
