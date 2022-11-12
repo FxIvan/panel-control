@@ -12,7 +12,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/' element={<Prueba/>}/>
       </Routes>
-      <RouteGuard path='/status' element={<Welcome/>}/>
+      <RouteGuard path='/' element={<Welcome/>}/>
     </HashRouter>
   );
 }
