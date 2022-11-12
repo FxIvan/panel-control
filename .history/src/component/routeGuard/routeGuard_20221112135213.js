@@ -13,7 +13,7 @@ export const RouteGuard = ({element}) => {
     }
 
     const redireccion = () =>{
-        window.location.href='/login'
+        window.location.href='/!#/login'
     }
 
     console.log(flag)
