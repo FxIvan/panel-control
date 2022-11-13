@@ -19,8 +19,10 @@ export const RouteGuard = ({element}) => {
     console.log(flag)
    // { flag ?  <Route path='/conexion' element={element} />:<Route path='/error'  element={<Error/>}/> }
     return (
+        {/*
         <Routes>
             { flag ?  <Route path='/conexion' element={element} />:<Route path='/error'  element={<Error/>}/> }
         </Routes>
+        */}
     )
 }

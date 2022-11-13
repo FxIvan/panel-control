@@ -1,0 +1,70 @@
+@media only screen and (min-width: 701px) {
+    .container-page-login{
+        width: 100%;
+    }
+
+    .subcontainer-page-login{
+        width: 80%;
+        margin: auto;
+        margin-top: 2rem;
+    }
+    .container-imagen-logo-toro{
+        text-align: center;
+    }
+
+    .container-imagen-logo-toro img{
+        width: 20%;
+    }
+
+    .container-form{
+        padding-top: 2rem;
+        width: 15%;
+        margin: auto;
+    }
+
+    .container-form form{
+        display: grid;
+    }
+
+    .container-form input{
+        border-top: 0px solid white;
+        border-left: 0px solid white;
+        border-right: 0px solid white;
+        border-bottom: 2px solid gray;
+    }
+
+    .container-form input:hover{
+        border-top: 0px solid white;
+        border-left: 0px solid white;
+        border-right: 0px solid white;
+        border-bottom: 2px solid gray;
+    }
+
+    .container-form form input:focus{
+        border: 0px solid white;
+        background-color: rgb(188, 219, 188);
+    }
+
+    .container-button-form{
+        margin-top: 1rem;
+        text-align: center;
+        
+    }
+
+    .container-button-form input{
+        border: 2px solid black;
+        border-radius: 4px;
+        padding: 0.2rem;
+    }
+
+    .container-button-form input:hover{
+        border: 2px solid black;
+        border-radius: 4px;
+        padding: 0.2rem;
+        background-color: greenyellow;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+
+}
