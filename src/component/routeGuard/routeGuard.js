@@ -1,28 +1,38 @@
-import React, {useState} from 'react'
+import axios from 'axios'
+import React, {useEffect, useState} from 'react'
 import {Route,Routes} from 'react-router-dom'
 import { Error } from '../errorLogin/error'
+import { Welcome } from '../welcome/welcome'
+import { Receiving } from './receiving/receiving'
+
 
 export const RouteGuard = ({element}) => {
 
-    const [flag,setFlag] = useState(false)
+    const [ tokenStatus , setTokenStatus ] = useState()
 
-    const hasJWT = () => {
-        localStorage.getItem('token')
-            ? setFlag(true)
-            : setFlag(false)
-    }
-/*
-    const redireccion = () =>{
-        window.location.href='/login'
-    }
-*/
-    console.log(flag)
-   // { flag ?  <Route path='/conexion' element={element} />:<Route path='/error'  element={<Error/>}/> }
+    const [ resPrueba , setResPrueba ] = useState()
+
+    useEffect(()=>{
+        localStorage.getItem("token") ? setTokenStatus(true):setTokenStatus(false)
+    },[])
+
+    useEffect(()=>{
+        if(tokenStatus){
+            axios.get('https://devalmendra.online/sendingdata/client')
+            .then(res=>{
+                console.log("Dentro de route: " , res)
+                setResPrueba(res)
+            })
+        }
+    },[tokenStatus])
+
+
+    //console.log("TokenStatus: " , tokenStatus)
+
+
     return (
-        {/*
-        <Routes>
-            { flag ?  <Route path='/conexion' element={element} />:<Route path='/error'  element={<Error/>}/> }
-        </Routes>
-        */}
+     <div>
+        {tokenStatus ? <Routes><Route path='/board' element={<Welcome user={tokenStatus}/>}/><Route path='/receiving/email' element={<Receiving/>}/></Routes>:<Routes><Route path='/error' element={<Error/>}/></Routes>}
+     </div>  
     )
 }

@@ -2,6 +2,7 @@ import axios from 'axios'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import torologin from '../../media/img/torologin.svg'
+import { RouteGuard } from '../routeGuard/routeGuard'
 import './css/login.css'
 
 
@@ -13,6 +14,8 @@ export const Login = () =>{
         password:''
     })
 
+    const [dataJWT , setdataJWT] = useState('')
+
     const handleChange = async(e) =>{
         setFormUser({
             ...formuser,
@@ -22,15 +25,17 @@ export const Login = () =>{
 
     
     const handleSubmit = (e) =>{
-        
+
         console.log(formuser)
         e.preventDefault()
         axios.post('https://devalmendra.online/v1/register/user/login', formuser)
-        .then(resp=>{
-            console.log(resp)
+        .then(token=>{
+            localStorage.setItem("token", token);//lo guardamos en el local storage
+            window.location.href=('/!#/board')
         })
         .catch(err=>{
             console.log('Este es el error: ' , err)
+            window.location.href=('/!#/error')
         })
     
     }
@@ -43,9 +48,7 @@ export const Login = () =>{
                 <div className='container-imagen-logo-toro'>
                     <img src={torologin} alt='imagen de toro login'/>
                 </div>
-                <div>
-                    <Link to='/welcome'>Welcome</Link>
-                </div>
+                <RouteGuard/>
                 <div className='container-form'>
                         <form onSubmit={handleSubmit}>
                             <label>USUARIO</label>

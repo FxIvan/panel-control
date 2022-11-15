@@ -1,0 +1,56 @@
+@media only screen and (min-width: 701px) {
+    .container-welcome-page{
+        background-color: #272626;
+        height: 100vh;
+    }
+
+    .subcontainer-header-welcome{
+        display: flex;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+    }
+
+    .container-option-header{
+        width: 50%;
+    }
+
+    .container-option-header ul{
+        list-style: none;
+    }
+
+    .container-option-header ul  li a{
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
+
+    .container-button-sesion{
+        width: 50%;
+    }
+
+    .subcontainer-button-sesion{
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .subcontainer-button-sesion button{
+        padding: 0.3rem;
+        background-color: #272626;
+        color: #ad0000;
+        font-weight: bold;
+        border: 1px solid #ad0000;
+        border-radius: 5%;
+    }
+
+    .subcontainer-button-sesion button:hover{
+        padding: 0.3rem;
+        background-color: #272626;
+        color: #af8888;
+        font-weight: bold;
+        border: 1px solid #af8888;
+        border-radius: 5%;
+    }
+
+    
+}
